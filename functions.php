@@ -162,6 +162,11 @@ remove_filter("the_content", "wpautop");
 remove_filter("the_excerpt", "wpautop");
 /* End of - Stop adding <br /> tag */
 /* ************************************************************************* */
+/* Add image support & sizes */
+add_theme_support( 'post-thumbnails' );
+add_image_size('home-grid', 180, 120, true);
+/* End of - Image sizes */
+/* ************************************************************************* */
 /* ShortCode */
 function printStripe( $atts, $content="" ){
 	extract($atts);
@@ -211,6 +216,7 @@ function printIAmAnIndividual( $atts, $content="" ){
 			<p><?php echo $description; ?></p>
 		</header>
 		<div><?php echo $content; ?></div>
+		<img class="icon" src="<?php echo $icon; ?>" />
 	</div>
 	<?php 
 	return ob_get_clean();
@@ -227,11 +233,45 @@ function printIAmAnEmployer( $atts, $content="" ){
 			<p><?php echo $description; ?></p>
 		</header>
 		<div><?php echo $content; ?></div>
+		<img class="icon" src="<?php echo $icon; ?>" />
 	</div>
 	<?php 
 	return ob_get_clean();
 }
 add_shortcode( 'iaman-employer', 'printIAmAnEmployer' );
+
+function printVerticalInfoBlock( $atts, $content="" ){
+	extract($atts);
+	ob_start();
+	?>
+	<a class="vertical-info" href="<?php echo $link; ?>">
+		<img class="icon" src="<?php echo $image; ?>" />
+		<header>
+			<h2><?php echo $heading; ?></h2>
+			<!--<p><?php echo $description; ?></p>-->
+		</header>
+		<div><?php echo $content; ?></div>
+	</a>
+	<?php 
+	return ob_get_clean();
+}
+add_shortcode( 'vertical-info', 'printVerticalInfoBlock' );
+
+function printFeaturedPostGrid($atts){
+	extract($atts);
+	ob_start();
+	
+	$tagFeatured = new WP_Query( array('post_type' => 'post', 'posts_per_page' => 4, 'tag' => $tag) );
+	while ( $tagFeatured->have_posts() ) : $tagFeatured->the_post();
+		get_template_part( 'content', 'grid' );
+	endwhile;
+	wp_reset_postdata();
+	?>
+	
+	<?php 
+	return ob_get_clean();
+}
+add_shortcode( 'featured-post-grid', 'printFeaturedPostGrid' );
 /* End of - ShortCode */
 
 

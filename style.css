@@ -929,7 +929,7 @@ input.search-field{
 /* ************************************************************************* */
 /* Stripe */
 @media screen and (min-width: 1001px) {
-	.stripe div{
+	.stripe > div{
 		width:1000px;
 		margin:0 auto;
 		padding:10px 0;
@@ -941,39 +941,10 @@ input.search-field{
 /* End of - Stripe */
 /* ************************************************************************* */
 /* I Am An */
-@media screen and (min-width: 1001px) {
-	.iaman{
-		width:1000px;
-		margin:0 auto;
-		padding:10px 0;
-		position:relative;
+
+.iaman > header{
+		display:none;
 	}
-	.iaman > header{
-		display:block;
-		position:absolute;
-		width:100%;
-		top:0;
-		left:0;
-	}
-	.iaman > header > div{
-		width:40%;
-		margin:0 auto;
-	}
-	.iaman > header > div > h2{
-		width:40%;
-		margin:0 auto;
-		border:1px solid #333333;
-		background:#ffffff;
-		text-align:center;
-		position:relative;
-		z-index:999;
-	}
-	.iaman > header > div > hr{
-		position:relative;
-		width:100%;
-		top:50px;
-	}
-}
 .iaman .individual{
 	float:left;	
 }
@@ -983,10 +954,14 @@ input.search-field{
 .iaman .type{
 	width:350px;
 	border:1px solid #dfdfdf;
-	margin-top:80px;
+	margin-top:40px;
 	margin-bottom:50px;
 	border-radius:6px;
 	padding:0;
+	position:relative;
+}
+.iaman .type .icon{
+	display:none;
 }
 .iaman .type > header{
 	border:1px solid #1999C0;
@@ -1037,7 +1012,164 @@ input.search-field{
 	content:'';
 	display:none;
 }
+@media screen and (min-width: 1001px) {
+	.iaman{
+		width:1000px;
+		margin:0 auto;
+		padding:10px 0;
+		position:relative;
+		margin-top:30px;
+	}
+	.iaman > header{
+		display:block;
+		position:absolute;
+		width:100%;
+		top:0;
+		left:0;
+	}
+	.iaman > header > div{
+		width:60%;
+		margin:0 auto;
+	}
+	.iaman > header > div > h2{
+		width:40%;
+		margin:0 auto;
+		border:1px solid #333333;
+		background:#ffffff;
+		text-align:center;
+		position:relative;
+		z-index:999;
+	}
+	.iaman > header > div > hr{
+		position:relative;
+		width:100%;
+		top:50px;
+	}
+	.iaman .type{
+		margin-top:100px;
+	}
+	.iaman .type > header{
+		padding-top:50px;
+		margin-bottom:100px;
+	}
+	.iaman .type .icon{
+		display:block;
+		position:absolute;
+		left:120px;
+		top:-60px;
+	}
+}
+.vertical-info{
+	display:block;
+	padding:15px;
+	text-decoration:none;
+	content:'';
+	display:table;
+	clear:both;
+}
+.vertical-info:hover{
+	background-color:#0B7795;
+	text-decoration:none;
+}
+.vertical-info *{
+	color:#ffffff;
+	text-decoration:none;
+}
+.vertical-info img{
+	display:block;
+	margin:0 auto;
+	margin-bottom:60px;
+	height:130px;
+}
+.vertical-info h2{
+	text-align:center;
+	font-weight:400;
+}
+.vertical-info p{
+	margin-bottom:25px;
+	font-size:12px;
+	text-align:justify;
+}
+.vertical-info ul{
+	margin-left:0;
+	margin-top:50px;
+}
+.vertical-info li:before{
+	content:'';
+	display:none;
+}
+.vertical-info li:after{
+	content:'\f054';
+	font-family:'FontAwesome';
+	color:#666666;
+	float:right;
+}
+.vertical-info li{
+	display:block;
+	padding:10px;
+	margin:0;
+	width:100%;
+	background-color:#FFE3A3;
+	color:#333333;
+	font-size:14px;
+	font-weight:700;
+	text-decoration:none;
+	border-radius:3px;
+	border:1px solid #FFBA1A;
+}
+.vertical-info:hover li{
+	background-color:#1999C0;
+	border-color:#0B7795;
+	color:#ffffff;
+}
+.vertical-info:hover li:after{
+	color:#ffffff;
+}
+@media screen and (min-width: 1001px) {
+	.vertical-info{
+		width:28%;
+		float:left;
+		margin:2.5%;
+		clear:none;
+	}
+}
 /* End of - I Am An */
+/* ************************************************************************* */
+/* Heading */
+article.home-grid{
+	width:48%;
+	float:left;
+	margin-right:2%;
+	margin-bottom:20px;
+}
+article.home-grid:nth-child(2n+1){
+	clear:left;
+}
+article.home-grid > img{
+	width:180px;
+	float:left;
+}
+.home-grid .entry-header{
+	width:100%;
+	float:right;
+	margin-right:-200px;
+	padding-right:200px;
+}
+.home-grid div.entry-header h3{
+	font-size:16px;
+	line-height:20px;
+	vertical-align:top;
+	color:#FFBA1A;
+	margin-bottom:5px;
+	text-transform:uppercase;
+}
+.home-grid .entry-header p{
+	font-size:16px;
+	line-height:20px;
+	color:#056883;
+	margin-bottom:5px;
+}
+/* End of - Heading */
 /* ************************************************************************* */
 /* Framework */
 .colRight{
@@ -1088,3 +1220,10 @@ input.search-field{
 	clear:both;
 }
 /* End of - Framework */
+*{
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
