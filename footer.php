@@ -10,10 +10,12 @@
 
 		</div><!-- #content-inner -->
 	</div><!-- #content -->
-
+	
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="footer-cap">
-		
+			<div class="footer-cap-inner">
+				<?php global $stardev; echo $stardev['footer_cap']; ?>
+			</div>
 		</div>
 		<div class="site-footer-top">
 			<div class="site-footer-top-inner">
@@ -26,9 +28,7 @@
 		<div class="site-footer-bottom">
 			<div class="site-footer-bottom-inner">
 				<div class="site-info">
-					<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'adom' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'adom' ), 'WordPress' ); ?></a>
-					<span class="sep"> | </span>
-					<?php printf( __( 'Theme: %1$s by %2$s.', 'adom' ), 'adom', '<a href="http://taheruddin.com" rel="designer">Taher Uddin</a>' ); ?>
+					<?php global $stardev; echo $stardev['site_info']; ?>
 				</div><!-- .site-info -->
 			</div>
 		</div>

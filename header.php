@@ -25,14 +25,14 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'description' ); ?>" rel="home">
 				<img src="<?php echo $stardev['logo']['url']; ?>" alt="<?php bloginfo( 'name' ); ?>" />
 			</a>
 			<div class="hotline">
 				<?php echo $stardev['hotline']; ?>
 			</div>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			<?php /*?><h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2><?php */?>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">

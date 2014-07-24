@@ -276,6 +276,38 @@ if (!class_exists('Redux_Framework_sample_config')) {
 				)
 
 			);
+			
+			$this->sections[] = array(
+                'title'     => __('Footer Settings', 'redux-framework-demo'),
+                'desc'      => __('', 'redux-framework-demo'),
+                'icon'      => 'el-icon-minus',
+				'fields' => array(
+				
+					array(
+						'id'               => 'footer_cap',
+						'type'             => 'editor',
+						'title'            => __('Footer Cap Content', 'redux-framework-demo'),
+						'subtitle'         => __('Enter content to show in footer cap.', 'redux-framework-demo'),
+						'args'   => array(
+							'teeny'            => true,
+							'textarea_rows'    => 10
+						)
+					),
+					
+					array(
+						'id'               => 'site_info',
+						'type'             => 'editor',
+						'title'            => __('Footer Bottom Content', 'redux-framework-demo'),
+						'subtitle'         => __('Enter content to show in footer bottom (usually site info).', 'redux-framework-demo'),
+						'args'   => array(
+							'teeny'            => true,
+							'textarea_rows'    => 10
+						)
+					),
+					
+				)
+
+			);
 
 
             

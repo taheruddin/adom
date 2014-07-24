@@ -5,10 +5,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('home-grid'); ?>>
-	<?php if ( has_post_thumbnail() && ! post_password_required() ) the_post_thumbnail(); ?>
+	<a class="thumbnail" href="<?php the_permalink(); ?>"><?php if ( has_post_thumbnail() && ! post_password_required() ) the_post_thumbnail(); ?></a>
 	<div class="entry-header">
 		<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
-		<p><?php the_excerpt(); ?></p>
+		<a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a>
 
 		<div class="entry-meta">
 			<?php adom_posted_on(); ?>
